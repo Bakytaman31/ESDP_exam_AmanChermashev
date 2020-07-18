@@ -77,7 +77,10 @@ class NewCafe extends Component {
                         />
                     </Grid>
                     <Grid item xs>
+                        <p>By submitting this form, you agree that the following information will be published.</p>
+                        <label htmlFor="checkbox">I agree</label>
                         <input
+                            id="checkbox"
                             type="checkbox"
                             required
                             onClick={() => this.setState({checkbox: !this.state.checkbox})}

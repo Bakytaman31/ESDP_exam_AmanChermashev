@@ -5,6 +5,7 @@ const config = require('./config');
 const app = express();
 
 const users = require('./app/users');
+const cafes = require('./app/cafes');
 
 app.use(express.json());
 app.use(cors());
@@ -14,6 +15,7 @@ const run = async () => {
     await mongoose.connect(config.database, config.databaseOptions);
 
     app.use('/users', users);
+    app.use('/cafes', cafes);
 
     app.listen(config.port, () => {
         console.log(`HTTP Server started on ${config.port} port!`);
