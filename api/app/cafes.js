@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         const cafes = await Cafe.find({}, {
             "title": 1,
             "description": 1,
-            "mainPhoto": 1,
+            "image": 1,
             "date": 1,
             "overall": 1,
             "food": 1,
@@ -37,22 +37,24 @@ router.get('/:id', async (req, res) => {
 router.post('/', [auth, upload.single('image')], async (req, res) => {
     try {
         if (!req.body.checkbox) {
-            res.status(400).send('Bad request')
+           return  res.status(400).send('Bad request');
         }
+
         const whiteList = {
             title: req.body.title,
             description: req.body.description,
-            mainPhoto: req.body.filename,
+            image: req.file.filename
         };
         const cafe = new Cafe(whiteList);
         await cafe.save();
         res.send(cafe);
     } catch (e) {
-        console.log(e);
+        console.log(req.body, e);
+        res.status(400).send({message: "Fill all inputs"})
     }
 });
 
-router.delete('/:id', permit, async (req, res) => {
+router.delete('/:id', permit('admin'), async (req, res) => {
     try {
         await Cafe.deleteOne({_id: req.params.id});
         res.send('Deleted');

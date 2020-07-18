@@ -11,7 +11,7 @@ import {
 
 const initialState = {
     cafes: [],
-    cafe: null,
+    cafe: {},
     getError: null,
     postError: null,
     deleteError: null,
@@ -29,7 +29,7 @@ const cafesReducer = (state = initialState, action) => {
         case GET_CAFE_REQUEST:
             return {...state, loading: true};
         case GET_CAFE_SUCCESS:
-            return {...state, loading: false, cafes: action.cafes};
+            return {...state, loading: false, cafe: action.cafe};
         case GET_CAFE_FAILURE:
             return {...state, loading: false, getError: action.error};
         case POST_CAFE_REQUEST:

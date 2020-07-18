@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 
 class NewCafe extends Component {
     state = {
-        name: '',
+        title: '',
         description: '',
         image: '',
         checkbox: false
@@ -53,8 +53,8 @@ class NewCafe extends Component {
                     <Grid item xs>
                         <FormElement
                             type="text"
-                            propertyName="name" required
-                            title="Name"
+                            propertyName="title" required
+                            title="Title"
                             onChange={this.inputChangeHandler}
                             value={this.state.title}
                         />

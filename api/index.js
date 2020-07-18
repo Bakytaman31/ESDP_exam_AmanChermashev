@@ -6,6 +6,8 @@ const app = express();
 
 const users = require('./app/users');
 const cafes = require('./app/cafes');
+const pictures = require('./app/pictures');
+const rates = require('./app/rates');
 
 app.use(express.json());
 app.use(cors());
@@ -16,6 +18,8 @@ const run = async () => {
 
     app.use('/users', users);
     app.use('/cafes', cafes);
+    app.use('/pictures', pictures);
+    app.use('/rates', rates);
 
     app.listen(config.port, () => {
         console.log(`HTTP Server started on ${config.port} port!`);
