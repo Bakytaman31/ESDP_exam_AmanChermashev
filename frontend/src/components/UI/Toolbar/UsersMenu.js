@@ -34,7 +34,7 @@ const UserMenu = ({user, logout}) => {
             >
                 <ListItem disabled>Hello, {user.displayName || user.username}!</ListItem>
                 <Divider/>
-                <MenuItem onClick={handleClose} component={Link} to={`/usersPictures/${user._id}`}>My pictures</MenuItem>
+                <MenuItem onClick={handleClose} component={Link} to="/newCafe">New Cafe</MenuItem>
                 <MenuItem onClick={logout}>Logout</MenuItem>
             </Menu>
         </>
