@@ -7,6 +7,7 @@ const Cafe = require('./models/Cafe');
 const Picture = require('./models/Picture');
 const Rate = require('./models/Rate');
 
+
 const run = async () => {
     await mongoose.connect(config.database, config.databaseOptions);
 
