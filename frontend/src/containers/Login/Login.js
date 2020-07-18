@@ -69,7 +69,7 @@ class Login extends Component {
 
                                 <Grid item xs>
                                     <Button type="submit" color="primary" variant="contained">
-                                        Login
+                                        Sign in
                                     </Button>
                                 </Grid>
                             </Grid>

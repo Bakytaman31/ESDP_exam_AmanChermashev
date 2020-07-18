@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "npx codeceptjs run --steps"
+  },
   "dependencies": {
     "codeceptjs": "^2.6.6",
     "puppeteer": "^5.2.0"

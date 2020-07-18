@@ -63,6 +63,7 @@ class NewCafe extends Component {
                         <FormElement
                             type="file"
                             propertyName="image"
+                            className="Image"
                             title="Image"
                             onChange={this.fileChangeHandler}
                         />
